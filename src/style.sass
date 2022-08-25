@@ -1,0 +1,300 @@
+@import-normalize
+
+body
+    box-sizing: border-box
+    font-family: Merienda
+    padding: 0
+    margin: 0
+    position: relative
+p
+    text-align: center
+    font-family: 'Merienda'
+    font-weight: 400
+    font-size: 14px
+    line-height: 20px
+header
+    width: 100%
+    height: 10px
+    position: absolute
+    top: 0
+footer
+    box-sizing: border-box
+    height: 150px
+    padding: 30px 0 20px 0
+
+.container
+    max-width: 1140px
+    margin: 0 auto
+
+
+.menu
+    height: 40px
+    margin-top: 40px 
+    padding: 0
+    list-style-type: none
+    display: flex
+    justify-content: space-around
+    align-items: flex-end
+    width: 355px
+    color: #fff
+    &_footer
+        color: #000
+        margin: 0 auto
+    &__item
+        font-weight: 400px
+        font-size: 12px
+    a
+        color: inherit
+        text-decoration-line: none
+.logo
+    width: 35px
+    height: 35px
+    margin-right: -10px
+    margin-bottom: -5px
+    vertical-align: bottom
+
+
+.sec-title
+    margin-top: -27px
+    min-height: 640px
+    width: 100%
+    background: url('../public/images/Main_bg.jpg') center no-repeat
+    background-size: cover
+    color: #fff
+    text-align: center
+    .secondary-title
+        margin: 34px 0 20px 0
+.title-main
+    margin: 0
+    padding-top: 181px
+    line-height: 57px
+    font-size: 40px
+    font-weight: 700
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+.beans-icon
+    width: 29px
+    height: 29px
+    margin: 0 auto
+    margin-top: 20px
+    position: relative
+    display: flex
+    align-items: center
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))
+    &:before
+        content: " "
+        position: absolute
+        right: 54px
+        width: 60px
+        height: 1px
+        background-color: #fff
+    &:after
+        content: ''
+        position: absolute
+        width: 60px
+        height: 1px
+        left: 54px
+        background-color: #fff
+    &_dark
+        margin-top: 27px
+        filter: none
+        &:before
+            content: " "
+            position: absolute
+            right: 54px
+            width: 60px
+            height: 1px
+            background-color: #000
+        &:after
+            content: ''
+            position: absolute
+            width: 60px
+            height: 1px
+            left: 54px
+            background-color: #000
+
+.secondary-title
+    font-weight: 700
+    font-size: 24px
+    line-height: 35px
+    margin: 0
+    text-align: center
+    &_shadow
+        margin: 20px 0 18px 0
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)    
+    &_dark
+        color: #000    
+.btn-more
+    width: 120px
+    height: 30px
+    padding: 0
+    background-color: rgba(255, 255, 255, 0)  
+    border: 1px solid
+    border-color: #fff
+    color: #fff
+    border-radius: 3px
+    font-family: 'Merienda'
+    font-style: normal
+    font-weight: 700
+    font-size: 14px
+    line-height: 20px
+    cursor: pointer
+
+.about
+    box-sizing: border-box
+    min-height: 520px
+    padding: 73px 0 101px 0
+    p
+        width: 590px
+        margin: 0 auto
+        margin-top: 40px
+
+.best
+    box-sizing: border-box
+    min-height: 495px
+    padding: 80px 0 110px 0
+    background: url('../public/images/Best_bg.jpg') center no-repeat
+    background-size: cover
+    &-wrapper
+        margin: 0 auto
+        margin-top: 39px
+        display: flex
+        justify-content: center
+    &__item
+        box-sizing: border-box
+        width: 220px
+        min-height: 240px
+        padding: 21px
+        margin: 0 35px
+        border-radius: 8px
+        background: rgba(255, 255, 255, 0.65)
+        text-align: center
+        cursor: pointer
+        &__img 
+            height: 134px
+            margin: 0 auto
+            display: flex
+            align-items: center
+            justify-content: center
+        &__name
+            margin-top: 14px
+            font-weight: 400
+            font-size: 14px
+            line-height: 20px
+            text-align: center
+        &__price
+            margin-top: 10px
+            font-weight: 700
+            font-size: 14px
+            line-height: 20px
+            text-align: right
+.catalog
+    box-sizing: border-box
+    padding: 60px 0 30px 0
+    &__line
+        width: 240px
+        margin: 50px auto 60px auto
+        border-top: 1px
+        border-color: #000
+    &__wrapper
+        width: 800px
+        margin: 0 auto
+        margin-top: 61px
+        display: grid
+        justify-content: space-between
+        grid-template-columns: repeat(3, 220px)
+        grid-column-gap: 71px
+        grid-row-gap: 60px
+    &__item
+        box-sizing: border-box
+        width: 220px
+        min-height: 260px
+        padding: 21px
+        border-radius: 8px
+        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.25)
+        text-align: center
+        cursor: pointer
+        &:hover
+            box-shadow: 5px 5px 35px rgba(0, 0, 0, 0.25)           
+        &__img 
+            height: 115px
+            margin: 0 auto
+            display: flex
+            align-items: center
+            justify-content: center
+        &__name
+            margin-top: 14px
+            font-weight: 400
+            font-size: 14px
+            line-height: 20px
+            text-align: center
+        &__category
+            margin-top: 14px
+            font-size: 14px
+            line-height: 20px
+            text-align: right
+        &__price
+            margin-top: 14px
+            font-weight: 700
+            font-size: 14px
+            line-height: 20px
+            text-align: right    
+.about-beans
+    width: 800px
+    margin: 0 auto
+    display: flex
+    justify-content: center
+    &__description
+        margin-top: 25px
+        width: 346px
+        text-align: center
+    &__text
+        margin-top: 25px
+        font-weight: 400
+        font-size: 14px
+        line-height: 20px
+        text-align: center
+.sort
+    width: 700px
+    margin: 0 auto
+    display: flex
+    justify-content: space-between
+    .search
+        width: 284px
+        display: flex
+        justify-content: space-between
+        align-items: center
+    #searchField
+        width: 180px
+        height: 30px
+        background: #FFFFFF
+        box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.25)
+        border-radius: 4px
+        border: none
+        text-align: center
+        font-size: 12px
+        font-family: 'Merienda'
+    .filter
+        display: flex
+        align-items: center
+        span
+            margin-right: 35px
+        &__wrapper
+            width: 235px
+            display: flex
+            justify-content: space-between
+        &__item
+            width: 75px
+            height: 30px
+            background: #FFF
+            box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.25)
+            border-radius: 4px 0px 0px 4px
+            display: flex
+            justify-content: center
+            align-items: center
+            font-weight: 400
+            font-size: 12px
+            cursor: pointer
+            &_active
+                background: rgba(71, 59, 4, 0.4)
+
+

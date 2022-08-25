@@ -24,20 +24,175 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
+    <title>Coffee Shop</title>
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+	<noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root">
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+    </div>
+	<!-- <header class="header">
+		<div class="container">
+			<nav>
+				<ul class="menu">
+					<li class="menu__item">
+						<img src="./icons/Logo.svg" alt="logo" class="logo">
+						Coffee house
+					</li>
+					<li class="menu__item">Our coffee</li>
+					<li class="menu__item">For your pleasure</li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+	<section class="sec-title">
+		<div class="container">
+			<h1 class="title-main">Everything You Love About Coffee</h1>
+			<div class="beans-icon"><img src="./icons/coffee-beans.svg" alt="beans-icon"></div>
+			<h2 class="secondary-title">We makes every day full of energy and taste</h2>
+			<h2 class="secondary-title secondary-title_shadow">Want to try our beans?</h2>
+			<button class="btn-more">More</button>
+		</div>
+	</section>
+	<section class="about">
+		<div class="container">
+			<h2 class="secondary-title secondary-title_dark">About us</h2>
+			<div class="beans-icon beans-icon_dark"><img src="./icons/coffee-beans-dark.svg" alt="beans-icon"></div>
+			<p>
+				Extremity sweetness difficult behaviour he of. On disposal of as landlord horrible.
+				Afraid at highly months do things on at. Situation recommend objection do intention
+				so questions. As greatly removed calling pleased improve an. Last ask him cold feel
+				met spot shy want. Children me laughing we prospect answered followed. At it went
+				is song that held help face.
+				<br>
+				<br>
+				Now residence dashwoods she excellent you. Shade being under his bed her, Much
+				read on as draw. Blessing for ignorant exercise any yourself unpacked. Pleasant
+				horrible but confined day end marriage. Eagerness furniture set preserved far
+				recommend. Did even but nor are most gave hope. Secure active living depend son
+				repair day ladies now.
+			</p>	
+		</div>
+	</section>
+	<section class="best">
+		<div class="container">
+			<h2 class="secondary-title secondary-title_dark">Our Best</h2>
+			<div class="best-wrapper">
+				<div class="best__item">
+					<div class="best__item__img">
+						<img src="./images/Solimo_Coffee.jpg" alt="Solimo_Coffee">
+					</div>
+					<div class="best__item__name">Solimo Coffee Beans 2 kg</div>
+					<div class="best__item__price">10.73$</div>
+				</div>
+				<div class="best__item">
+					<div class="best__item__img">
+						<img src="./images/Presto_Coffee.png" alt="Presto_Coffee">
+					</div>
+					<div class="best__item__name">Presto Coffee Beans 1 kg</div>
+					<div class="best__item__price">15.99$</div>
+				</div>
+				<div class="best__item">
+					<div class="best__item__img">
+						<img src="./images/Aromistico_coffee.jpg" alt="Aromistico">
+					</div>
+					<div class="best__item__name">AROMISTICO Coffee 1 kg</div>
+					<div class="best__item__price">6.99$</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="catalog">
+		<div class="container">
+			<div class="about-beans">
+				<img src="./images/CoffeeGirl.png" alt="Coffee_Girl" class="about-bens__img">
+				<div class="about-beans__description">
+					<div class="secondary-title">About our beans</div>
+					<div class="beans-icon beans-icon_dark"><img src="./icons/coffee-beans-dark.svg" alt="beans-icon"></div>
+					<div class="about-beans__text">
+						Extremity sweetness difficult behaviour he of. On disposal of as landlord horrible.
+						<br><br>
+						Afraid at highly months do things on at. Situation <br> recommend objection do intention <br>
+						so questions. 
+						As greatly removed calling pleased improve an. <br> Last ask him cold feel <br>
+						met spot shy want. Children me laughing we <br> prospect answered followed. At it went <br>
+						is song that held help face.
+					</div>
+				</div>
+			</div>
+			<hr class="catalog__line">
+			<div class="sort">
+				<div class="search">
+					<label for="searchField">Looking for</label>
+					<input name="search" id="searchField" type="text" placeholder="start typing here...">
+				</div>
+				<div class="filter">
+					<span>Or filter</span>
+					<div class="filter__wrapper">
+						<div class="filter__item">Brazil</div>
+						<div class="filter__item">Kenya</div>
+						<div class="filter__item">Columbia</div>
+					</div>
+				</div>
+			</div>
+			<div class="catalog__wrapper">
+				<div class="catalog__item">
+					<div class="catalog__item__img">
+						<img src="./images/Aromistico_coffee.jpg" alt="CoffeePicture">
+					</div>
+					<div class="catalog__item__name">AROMISTICO Coffee 1 kg</div>
+					<div class="catalog__item__category">Brazil</div>
+					<div class="catalog__item__price">6.99$</div>
+				</div>
+				<div class="catalog__item">
+					<div class="catalog__item__img">
+						<img src="./images/Aromistico_coffee.jpg" alt="CoffeePicture">
+					</div>
+					<div class="catalog__item__name">AROMISTICO Coffee 1 kg</div>
+					<div class="catalog__item__category">Kenya</div>
+					<div class="catalog__item__price">6.99$</div>
+				</div>
+				<div class="catalog__item">
+					<div class="catalog__item__img">
+						<img src="./images/Aromistico_coffee.jpg" alt="CoffeePicture">
+					</div>
+					<div class="catalog__item__name">AROMISTICO Coffee 1 kg</div>
+					<div class="catalog__item__category">Columbia</div>
+					<div class="catalog__item__price">6.99$</div>
+				</div>
+				<div class="catalog__item">
+					<div class="catalog__item__img">
+						<img src="./images/Aromistico_coffee.jpg" alt="CoffeePicture">
+					</div>
+					<div class="catalog__item__name">AROMISTICO Coffee 1 kg</div>
+					<div class="catalog__item__category">Brazil</div>
+					<div class="catalog__item__price">6.99$</div>
+				</div>
+				<div class="catalog__item">
+					<div class="catalog__item__img">
+						<img src="./images/Aromistico_coffee.jpg" alt="CoffeePicture">
+					</div>
+					<div class="catalog__item__name">AROMISTICO Coffee 1 kg</div>
+					<div class="catalog__item__category">Kenya</div>
+					<div class="catalog__item__price">6.99$</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<footer>
+		<div class="container">
+			<nav>
+				<ul class="menu menu_footer">
+					<li class="menu__item">
+						<img src="./icons/Logo-dark.svg" alt="logo" class="logo">
+						Coffee house
+					</li>
+					<li class="menu__item">Our coffee</li>
+					<li class="menu__item">For your pleasure</li>
+				</ul>
+			</nav>
+			<div class="beans-icon beans-icon_dark"><img src="./icons/coffee-beans-dark.svg" alt="beans-icon"></div>
+		</div>
+	</footer> -->
   </body>
 </html>
