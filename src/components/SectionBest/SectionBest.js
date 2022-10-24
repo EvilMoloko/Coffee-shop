@@ -3,14 +3,14 @@ import ItemCoffee from "../ItemCoffee/ItemCoffee";
 const SectionBest = ({data}) => {
 
 	const bestItems = data.map(item => {
-		if (item.best) {
+		if (item.rate >= 8) {
 			return (
 				<ItemCoffee
 					key={item.id}
 					image={item.image}
 					name={item.name}
 					price={item.price}
-					best={item.best}
+					rate={item.rate}
 					place='SectionBest'
 				/>
 			)

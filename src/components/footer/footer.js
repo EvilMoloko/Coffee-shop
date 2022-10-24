@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 const Footer = () => { 
     return (
@@ -5,12 +6,12 @@ const Footer = () => {
             <div className="container">
                 <nav>
                     <ul className="menu menu_footer">
-                        <li className="menu__item">
-                            <img src="./icons/Logo-dark.svg" alt="logo" className="logo"/>
-                            Coffee house
+                    <li className="menu__item">
+                            <Link to="/"><img src="./icons/Logo-dark.svg" alt="logo" className="logo"/>
+                            Coffee house</Link>
                         </li>
-                        <li className="menu__item">Our coffee</li>
-                        <li className="menu__item">For your pleasure</li>
+                        <li className="menu__item"><Link to="/catalog">Our coffee</Link></li>
+                        <li className="menu__item"><Link to="#">For your pleasure</Link></li>
                     </ul>
                 </nav>
                 <div className="beans-icon beans-icon_dark"><img src="./icons/coffee-beans-dark.svg" alt="beans-icon"/></div>

@@ -1,28 +1,14 @@
 import { useState } from 'react';
-import { lazy, Suspense } from 'react';
-import {
-    BrowserRouter as Router,
-    Routes,
-    Route
-  } from "react-router-dom";
-
-import '../../fonts.css';
-import '../../style.sass';
-import '../../App.css';
 
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
-import SectionTitle from '../SectionTitle/SectionTitle';
-import SectionAbout from '../SectionAbout/SectionAbout';
-import SectionBest from '../SectionBest/SectionBest';
+
 import SectionCatalog from '../SectionCatalog/SectionCatalog';
 
-const MainPage = lazy(() => import('../pages/MainPage'));
-const OurCoffeePage = lazy(() => import('../pages/OurCoffeePage'));
 
 
 
-const App = () => {
+const OurCoffeePage = () => {
 
     const [data, setData] = useState([
         {name: 'Solimo Coffee Beans 2 kg', image: 'Solimo_Coffee.jpg', price: 10.73, category: 'Brazil', rate: 8.0, id: 1},
@@ -74,30 +60,20 @@ const App = () => {
 
         const sortData = searchCofeee(itemsFilter(categoryFilter, data), searchField);
         return(
-            <Router>
-                <Suspense>
-                    <Routes>
-                        <Route path='/' element={<MainPage/>}/>
-                        <Route path='/catalog' element={<OurCoffeePage/>}>
-                            {/* <Route path=':id' element={}/> */}
-                        </Route>
-                    </Routes>
-                </Suspense>
-            </Router>
-            // <>
-            //     <MainPage></MainPage>
-            //     <OurCoffeePage></OurCoffeePage>
-            //     {/* <Header/>
-            //     <SectionTitle/>
-            //     <SectionAbout/>
-            //     <SectionBest data={data}/>
-            //     <SectionCatalog
-            //         data={sortData}
-            //         onCatalogCategoryClick={onCatalogCategoryClick}
-            //         onSearchUpdate={setSearchField}/>
-            //     <Footer/> */}
-            // </>
+            <>
+                <Header/>
+                <section class="sec-title-our-coffee">
+                    <div class="container">
+                        <h1 class="title-our-coffee">Our Coffee</h1>
+                    </div>
+                </section>
+                <SectionCatalog
+                    data={sortData}
+                    onCatalogCategoryClick={onCatalogCategoryClick}
+                    onSearchUpdate={setSearchField}/>
+                <Footer/>
+            </>
         )
 }
 
-export default App;
+export default OurCoffeePage;
