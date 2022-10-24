@@ -1,4 +1,4 @@
-import ItemCoffee from "../item-coffee/item-coffee";
+import ItemCoffee from "../ItemCoffee/ItemCoffee";
 
 const SectionBest = ({data}) => {
 

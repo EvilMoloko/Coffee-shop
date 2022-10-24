@@ -1,5 +1,5 @@
 
-const sectionTitle = (
+const SectionTitle = () => {
     <section className="sec-title">
 		<div className="container">
 			<h1 className="title-main">Everything You Love About Coffee</h1>
@@ -9,6 +9,6 @@ const sectionTitle = (
 			<button className="btn-more">More</button>
 		</div>
 	</section>
-);
+};
 
-export default sectionTitle;
+export default SectionTitle;

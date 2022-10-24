@@ -1,36 +1,32 @@
-import { Component } from 'react';
-
+import { useState } from 'react';
 import '../../fonts.css'
 import '../../style.sass'
 import '../../App.css';
 
-import header from '../header/header';
-import footer from '../footer/footer';
-import sectionTitle from '../section-title/section-title';
-import sectionAbout from '../section-about/section-about';
-import SectionBest from '../section-best/section-best';
-import SectionCatalog from '../section-catalog/section-catalog';
+import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
+import SectionTitle from '../SectionTitle/SectionTitle';
+import SectionAbout from '../SectionAbout/SectionAbout';
+import SectionBest from '../SectionBest/SectionBest';
+import SectionCatalog from '../SectionCatalog/SectionCatalog';
 
 
 
-class App extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            data: [
-                {name: 'Solimo Coffee Beans 2 kg', image: 'Solimo_Coffee.jpg', price: 10.73, category: 'Brazil', best: true, id: 1},
-                {name: 'Presto Coffee Beans 1 kg', image: 'Presto_Coffee.png', price: 15.99, category: 'Kenya', best: true, id: 2},
-                {name: 'AROMISTICO Coffee 1 kg', image: 'Aromistico_coffee.jpg', price: 6.99, category: 'Columbia', best: true, id: 3},
-                {name: 'AROMISTICO Coffee 1 kg', image: 'Aromistico_coffee.jpg', price: 6.99, category: 'Brazil', best: false, id: 4},
-                {name: 'AROMISTICO Coffee 1 kg', image: 'Aromistico_coffee.jpg', price: 10.73, category: 'Kenya', best: false, id: 5},
-                {name: 'AROMISTICO Coffee 1 kg', image: 'Aromistico_coffee.jpg', price: 15.99, category: 'Columbia', best: false, id: 6},
-            ],
-            categoryFilter: 'All',
-            searchField: ''
-        }
-    }
+const App = () => {
 
-    searchCofeee = (data, str) => {
+    const [data, setData] = useState([
+        {name: 'Solimo Coffee Beans 2 kg', image: 'Solimo_Coffee.jpg', price: 10.73, category: 'Brazil', best: true, id: 1},
+        {name: 'Presto Coffee Beans 1 kg', image: 'Presto_Coffee.png', price: 15.99, category: 'Kenya', best: true, id: 2},
+        {name: 'AROMISTICO Coffee 1 kg', image: 'Aromistico_coffee.jpg', price: 6.99, category: 'Columbia', best: true, id: 3},
+        {name: 'AROMISTICO Coffee 1 kg', image: 'Aromistico_coffee.jpg', price: 6.99, category: 'Brazil', best: false, id: 4},
+        {name: 'AROMISTICO Coffee 1 kg', image: 'Aromistico_coffee.jpg', price: 10.73, category: 'Kenya', best: false, id: 5},
+        {name: 'AROMISTICO Coffee 1 kg', image: 'Aromistico_coffee.jpg', price: 15.99, category: 'Columbia', best: false, id: 6},
+    ]);
+    const [categoryFilter, setCategoryFilter] = useState('All');
+    const [searchField, setSearchField] = useState('');
+    
+
+    const searchCofeee = (data, str) => {
         if (str.length === 0) {
             return data;
         }
@@ -40,11 +36,7 @@ class App extends Component {
         
     }
 
-    onSearchUpdate = (str) => {
-        this.setState({searchField: str})
-    }
-
-    itemsFilter = (filter, data) => {
+    const itemsFilter = (filter, data) => {
         if(filter !== 'All') {
             return( 
                 data.filter(item => {
@@ -58,15 +50,11 @@ class App extends Component {
         }
     }
 
-    onCatalogCategoryClick = (e) => {
-        if (this.state.categoryFilter === e.innerHTML) {
-            this.setState({
-                categoryFilter: 'All'
-            })
+    const onCatalogCategoryClick = (e) => {
+        if (categoryFilter === e.innerHTML) {
+            setCategoryFilter('All');
         } else {
-            this.setState({
-                categoryFilter: e.innerHTML
-            })
+            setCategoryFilter(e.innerHTML);
         }
         document.querySelectorAll('.'+ e.classList).forEach(el => {
             el.classList.remove('filter__item_active')
@@ -74,22 +62,20 @@ class App extends Component {
         e.classList.toggle('filter__item_active')
     }
 
-    render() {
-        const {data, categoryFilter, searchField} = this.state;
-        const sortData = this.searchCofeee(this.itemsFilter(categoryFilter, data), searchField);
+        const sortData = searchCofeee(itemsFilter(categoryFilter, data), searchField);
         return(
-            [header,
-            sectionTitle,
-            sectionAbout,
-            <SectionBest
-                data={data}/>,
-            <SectionCatalog
-                data={sortData}
-                onCatalogCategoryClick={this.onCatalogCategoryClick}
-                onSearchUpdate={this.onSearchUpdate}/>,
-            footer]
+            <>
+                <Header/>
+                <SectionTitle/>
+                <SectionAbout/>
+                <SectionBest data={data}/>
+                <SectionCatalog
+                    data={sortData}
+                    onCatalogCategoryClick={onCatalogCategoryClick}
+                    onSearchUpdate={setSearchField}/>
+                <Footer/>
+            </>
         )
-    }
 }
 
 export default App;
