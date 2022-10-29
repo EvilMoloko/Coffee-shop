@@ -3,7 +3,8 @@ import { useState } from 'react';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 
-import SectionCatalog from '../SectionCatalog/SectionCatalog';
+import Catalog from '../Catalog/Catalog';
+import CoffeeSort from '../CoffeeSort/CoffeeSort';
 
 
 
@@ -46,31 +47,42 @@ const OurCoffeePage = () => {
         }
     }
 
-    const onCatalogCategoryClick = (e) => {
-        if (categoryFilter === e.innerHTML) {
-            setCategoryFilter('All');
-        } else {
-            setCategoryFilter(e.innerHTML);
-        }
-        document.querySelectorAll('.'+ e.classList).forEach(el => {
-            el.classList.remove('filter__item_active')
-        })
-        e.classList.toggle('filter__item_active')
-    }
 
         const sortData = searchCofeee(itemsFilter(categoryFilter, data), searchField);
         return(
             <>
                 <Header/>
-                <section class="sec-title-our-coffee">
-                    <div class="container">
-                        <h1 class="title-our-coffee">Our Coffee</h1>
+                <section className="sec-title-our-coffee">
+                    <div className="container">
+                        <h1 className="title-our-coffee">Our Coffee</h1>
                     </div>
                 </section>
-                <SectionCatalog
-                    data={sortData}
-                    onCatalogCategoryClick={onCatalogCategoryClick}
-                    onSearchUpdate={setSearchField}/>
+                <section className="catalog">
+                    <div className="container">
+                        <div className="about-beans">
+                            <img src="./images/CoffeeGirl.png" alt="Coffee_Girl" className="about-bens__img"/>
+                            <div className="about-beans__description">
+                                <div className="secondary-title">About our beans</div>
+                                <div className="beans-icon beans-icon_dark"><img src="./icons/coffee-beans-dark.svg" alt="beans-icon"/></div>
+                                <div className="about-beans__text">
+                                    Extremity sweetness difficult behaviour he of. On disposal of as landlord horrible.
+                                    <br/><br/>
+                                    Afraid at highly months do things on at. Situation <br/> recommend objection do intention <br/>
+                                    so questions. 
+                                    As greatly removed calling pleased improve an. <br/> Last ask him cold feel <br/>
+                                    met spot shy want. Children me laughing we <br/> prospect answered followed. At it went <br/>
+                                    is song that held help face.
+                                </div>
+                            </div>
+                        </div>
+                        <hr className="catalog__line"/>
+                        <CoffeeSort 
+                            activeClass={'filter__item_active'}/>
+                        <Catalog
+                           data={sortData} />
+                    </div>
+                </section>
+
                 <Footer/>
             </>
         )

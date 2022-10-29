@@ -15,10 +15,11 @@ import Footer from '../Footer/Footer';
 import SectionTitle from '../SectionTitle/SectionTitle';
 import SectionAbout from '../SectionAbout/SectionAbout';
 import SectionBest from '../SectionBest/SectionBest';
-import SectionCatalog from '../SectionCatalog/SectionCatalog';
+
 
 const MainPage = lazy(() => import('../pages/MainPage'));
 const OurCoffeePage = lazy(() => import('../pages/OurCoffeePage'));
+const SingleCoffeePage = lazy(() => import('../pages/SingleCoffeePage'));
 
 
 
@@ -77,10 +78,9 @@ const App = () => {
             <Router>
                 <Suspense>
                     <Routes>
-                        <Route path='/' element={<MainPage/>}/>
-                        <Route path='/catalog' element={<OurCoffeePage/>}>
-                            {/* <Route path=':id' element={}/> */}
-                        </Route>
+                        <Route exact path='/' element={<MainPage/>}/>
+                        <Route exact path='/catalog' element={<OurCoffeePage/>}/>
+                        <Route exact path='/catalog/:id' element={<SingleCoffeePage/>}/>
                     </Routes>
                 </Suspense>
             </Router>
