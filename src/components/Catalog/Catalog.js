@@ -1,12 +1,43 @@
 import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+
 import ItemCoffee from "../ItemCoffee/ItemCoffee"
 
 
 
-const Catalog = ({data}) => {
 
-    const catalogItems = data.map(item => {
+const Catalog = () => {
+
+    const {coffee} = useSelector(state => state);
+    const {categoryFilter} = useSelector(state => state);
+    const {searchField} = useSelector(state => state);
+
+    const searchCofeee = (data, str) => {
+        if (str.length === 0) {
+            return data;
+        }
+        return data.filter(item => {
+            return item.name.toLowerCase().indexOf(str.toLowerCase()) > -1;
+        })
+        
+    }
+
+    const itemsFilter = (filter, data) => {
+        if(filter !== 'All') {
+            return( 
+                data.filter(item => {
+                    if (filter === item.category) {
+                        return item
+                    }
+                })
+            )
+        } else {
+            return data
+        }
+    }
+
+    const sortData = searchCofeee(itemsFilter(categoryFilter, coffee), searchField);
+
+    const catalogItems = sortData.map(item => {
         return (
             <ItemCoffee
                 key={item.id}

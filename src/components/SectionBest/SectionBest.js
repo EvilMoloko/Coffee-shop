@@ -6,6 +6,7 @@ const SectionBest = ({data}) => {
 		if (item.rate >= 8) {
 			return (
 				<ItemCoffee
+					id={item.id}
 					key={item.id}
 					image={item.image}
 					name={item.name}

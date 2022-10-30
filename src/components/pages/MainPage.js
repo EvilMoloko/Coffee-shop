@@ -6,18 +6,16 @@ import SectionTitle from '../SectionTitle/SectionTitle';
 import SectionAbout from '../SectionAbout/SectionAbout';
 import SectionBest from '../SectionBest/SectionBest';
 
+import { useDispatch, useSelector } from 'react-redux';
+import { categoryFilterChanged } from '../../actions';
+
 
 const MainPage = () => {
-    const [data, setData] = useState([
-        {name: 'Solimo Coffee Beans 2 kg', image: 'Solimo_Coffee.jpg', price: 10.73, category: 'Brazil', rate: 8.0, id: 1},
-        {name: 'Presto Coffee Beans 1 kg', image: 'Presto_Coffee.png', price: 15.99, category: 'Kenya', rate: 9.0, id: 2},
-        {name: 'AROMISTICO Coffee 1 kg', image: 'Aromistico_coffee.jpg', price: 6.99, category: 'Columbia', rate: 8.7, id: 3},
-        {name: 'AROMISTICO Coffee 1 kg', image: 'Aromistico_coffee.jpg', price: 6.99, category: 'Brazil', rate: 6.7, id: 4},
-        {name: 'AROMISTICO Coffee 1 kg', image: 'Aromistico_coffee.jpg', price: 10.73, category: 'Kenya', rate: 7.0, id: 5},
-        {name: 'AROMISTICO Coffee 1 kg', image: 'Aromistico_coffee.jpg', price: 15.99, category: 'Columbia', rate: 7.8, id: 6},
-    ]);
-    const [categoryFilter, setCategoryFilter] = useState('All');
-    const [searchField, setSearchField] = useState('');
+    const {coffee} = useSelector(state => state)
+    const {categoryFilter} = useSelector(state => state)
+    const {searchField} = useSelector(state => state)
+
+    const dispatch = useDispatch();
     
 
     const searchCofeee = (data, str) => {
@@ -46,9 +44,9 @@ const MainPage = () => {
 
     const onCatalogCategoryClick = (e) => {
         if (categoryFilter === e.innerHTML) {
-            setCategoryFilter('All');
+            dispatch(categoryFilterChanged('All'));
         } else {
-            setCategoryFilter(e.innerHTML);
+            dispatch(categoryFilterChanged(e.innerHTML));
         }
         document.querySelectorAll('.'+ e.classList).forEach(el => {
             el.classList.remove('filter__item_active')
@@ -56,13 +54,13 @@ const MainPage = () => {
         e.classList.toggle('filter__item_active')
     }
 
-        const sortData = searchCofeee(itemsFilter(categoryFilter, data), searchField);
+        const sortData = searchCofeee(itemsFilter(categoryFilter, coffee), searchField);
         return(
             <>
                 <Header/>
                 <SectionTitle/>
                 <SectionAbout/>
-                <SectionBest data={data}/>
+                <SectionBest data={sortData}/>
                 <Footer/>
             </>
         )
