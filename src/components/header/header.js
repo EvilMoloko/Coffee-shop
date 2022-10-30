@@ -11,7 +11,7 @@ const Header = () => {
                             Coffee house</Link>
                         </li>
                         <li className="menu__item"><Link to="/catalog">Our coffee</Link></li>
-                        <li className="menu__item"><Link to="#">For your pleasure</Link></li>
+                        <li className="menu__item"><Link to="/pleasure">For your pleasure</Link></li>
                     </ul>
                 </nav>
             </div>
