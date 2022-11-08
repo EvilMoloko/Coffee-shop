@@ -1,10 +1,3 @@
-export const coffeeLoaded = (sortCoffee) => {
-    return {
-        type: "COFFEE_SORTED",
-        payload: sortCoffee
-    }
-}
-
 export const categoryFilterChanged = (filter) => {
     return {
         type: "CATEGORY_FILTER_CHANGED",

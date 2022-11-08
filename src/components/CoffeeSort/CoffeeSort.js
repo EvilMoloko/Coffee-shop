@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
 import { categoryFilterChanged, searchFieldChanged } from "../../actions";
@@ -16,10 +15,6 @@ const CoffeeSort = ({activeClass}) => {
             dispatch(categoryFilterChanged(e.innerHTML));
         }
 
-        // Array.from(e.parentElement.children).forEach(el => {
-        //     console.log(el)
-        //     el.classList.remove(activeClass)
-        // })
         document.querySelectorAll('.'+ e.classList).forEach(el => {
             el.classList.remove(activeClass)
         })

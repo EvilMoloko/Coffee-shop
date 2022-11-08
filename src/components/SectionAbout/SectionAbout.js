@@ -1,10 +1,11 @@
+import coffeeBeansDark from '../../resources/icons/coffee-beans-dark.svg'
 
 const SectionAbout = () => {
 	return (
 		<section className="about">
 			<div className="container">
 				<h2 className="secondary-title secondary-title_dark">About us</h2>
-				<div className="beans-icon beans-icon_dark"><img src="./icons/coffee-beans-dark.svg" alt="beans-icon"/></div>
+				<div className="beans-icon beans-icon_dark"><img src={coffeeBeansDark} alt="beans-icon"/></div>
 				<p>
 					Extremity sweetness difficult behaviour he of. On disposal of as landlord horrible.
 					Afraid at highly months do things on at. Situation recommend objection do intention

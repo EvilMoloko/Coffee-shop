@@ -3,8 +3,6 @@ import { useSelector } from "react-redux";
 import ItemCoffee from "../ItemCoffee/ItemCoffee"
 
 
-
-
 const Catalog = () => {
 
     const {coffee} = useSelector(state => state);

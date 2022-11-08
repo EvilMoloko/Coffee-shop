@@ -1,28 +1,12 @@
-import { useState } from 'react';
-
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
-
 import Catalog from '../Catalog/Catalog';
 import CoffeeSort from '../CoffeeSort/CoffeeSort';
-import { useDispatch, useSelector } from 'react-redux';
-import { useEffect } from 'react';
 
-
-
+import CoffeeGirl from '../../resources/img/CoffeeGirl.png'
+import coffeeBeansDark from '../../resources/icons/coffee-beans-dark.svg'
 
 const OurCoffeePage = () => {
-
-    const {sortCoffee} = useSelector(state => state);
-    const {categoryFilter} = useSelector(state => state);
-    const {searchField} = useSelector(state => state);
-
-    const dispatch = useDispatch();
-    
-    useEffect(() => {
-
-    },[categoryFilter])
-
         return(
             <>
                 <Header/>
@@ -34,10 +18,10 @@ const OurCoffeePage = () => {
                 <section className="catalog">
                     <div className="container">
                         <div className="about-beans">
-                            <img src="./images/CoffeeGirl.png" alt="Coffee_Girl" className="about-bens__img"/>
+                            <img src={CoffeeGirl} alt="Coffee_Girl" className="about-bens__img"/>
                             <div className="about-beans__description">
                                 <div className="secondary-title">About our beans</div>
-                                <div className="beans-icon beans-icon_dark"><img src="./icons/coffee-beans-dark.svg" alt="beans-icon"/></div>
+                                <div className="beans-icon beans-icon_dark"><img src={coffeeBeansDark} alt="beans-icon"/></div>
                                 <div className="about-beans__text">
                                     Extremity sweetness difficult behaviour he of. On disposal of as landlord horrible.
                                     <br/><br/>

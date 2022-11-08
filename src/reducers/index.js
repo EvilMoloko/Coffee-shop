@@ -1,5 +1,3 @@
-import { createSlice } from "@reduxjs/toolkit";
-
 const initialState = {
     coffee: [
         {name: 'Solimo Coffee Beans 2 kg',
@@ -45,7 +43,6 @@ const initialState = {
          rate: 7.8,
          id: 6},
     ],
-    sortCoffee: [],
     categoryFilter: 'All',
     searchField: ''
 }
@@ -53,11 +50,6 @@ const initialState = {
 
 const reducer = (state = initialState, action) => {
     switch (action.type) {
-        case "COFFEE_SORTED":
-            return {
-                ...state,
-                sortCoffee: action.payload
-            }
         case "CATEGORY_FILTER_CHANGED":
             return {
                 ...state,
